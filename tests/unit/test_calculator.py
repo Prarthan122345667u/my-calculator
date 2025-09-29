@@ -4,7 +4,7 @@ Students start with 2 passing tests, then add more
 """
 from numpy import multiply
 import pytest
-from src.calculator import add, divide, subtract
+from src.calculator import add, divide, subtract, multiply, divide
 
 class TestBasicOperations:
     """Test basic arithmetic operations"""
@@ -29,6 +29,16 @@ class TestBasicOperations:
         assert subtract(-1, -1) == 0
         assert subtract(-5, -3) == -2
 
+class TestMultiplyDiv:
+    def test_multiply_positive_numbers(self):
+        """Test multiplying positive numbers."""
+        assert multiply(3,4) == 12
+        assert multiply(8,4) == 32
+    def test_divide_positive_numbers(self):
+        """Test dividing positive numbers."""
+        assert divide(10,2) == 5
+        assert divide(9,3) == 3
+                      
 class TestMultiplyDivideWithValidation:
     """Test multiplication and division with input validation."""
     
